@@ -10,3 +10,12 @@ Onde:
 Ponto e canto é a coordenada do ponto(x,y)
 Cor é (b, g, r)
 """
+
+import cv2
+import numpy as np
+
+image_height = 100
+image_width = 100
+number_of_color_channels = 3
+black = (0,0,0)
+white = (255,255,255)
