@@ -1,5 +1,7 @@
-# 1) Crie uma imagem 400 x 400
-# e utilizando o opencv com o python a transforme num tabuleiro de xadrez aonde cada quadrado seja do tamanho 50x50.
+"""
+1) Crie uma imagem 400 x 400 e utilizando o opencv com o python
+a transforme num tabuleiro de xadrez aonde cada quadrado seja do tamanho 50x50.
+"""
 import cv2
 import numpy as np
 
