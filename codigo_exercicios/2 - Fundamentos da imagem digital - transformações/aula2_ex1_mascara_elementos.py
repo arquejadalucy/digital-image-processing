@@ -10,3 +10,5 @@ Todos centralizados e igualmente espaçados
 Aplique a máscara
 Faça um espelhamento vertical
 """
+
+

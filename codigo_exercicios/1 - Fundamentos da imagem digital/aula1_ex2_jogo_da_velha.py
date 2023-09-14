@@ -32,35 +32,34 @@ for i in [100, 200]:
     cv2.line(img_array, [0, i], [300, i], black,
              thickness=3, lineType=cv2.LINE_4, shift=0)
 
-
-for [i, j] in [[0, 0], [200, 0], [100, 0]]:
-    cv2.line(img_array, [i, j], [i + 100, j + 100], black,
-             thickness=1, lineType=cv2.LINE_4, shift=0)
-    cv2.line(img_array, [i + 100, j], [i, j + 100], black,
-             thickness=1, lineType=cv2.LINE_4, shift=0)
-#
-# cv2.line(img_array, [200, 0], [300, 100], black,
-#          thickness=1, lineType=cv2.LINE_4, shift=0)
-# cv2.line(img_array, [300, 0], [200, 100], black,
-#          thickness=1, lineType=cv2.LINE_4, shift=0)
-#
-# cv2.line(img_array, [100, 100], [200, 200], black,
-#          thickness=1, lineType=cv2.LINE_4, shift=0)
-# cv2.line(img_array, [100, 200], [200, 100], black,
-#          thickness=1, lineType=cv2.LINE_4, shift=0)
-
 """
 | x | 0 | x |
 | 0 | x | x |
 | 0 | x | 0 |
 """
-coordenadas_dos_x = {
-    1: [[0, 0], [100, 100], [100, 0], [0, 100]],
-    2: [[200, 0], [300, 100], [300, 0], [200, 100]],
-    3: [[100, 100], [200, 200], [100, 200], [200, 100]],
-    #4: [[i, j], [i+100, j+100], [j+100, j], [i, j+100]]
-    # 4: [[200,100], [300, 200], []]
-}
+coordenadas_dos_x = [
+    [[10, 10], [90, 90], [90, 10], [10, 90]],
+    [[210, 10], [290, 90], [290, 10], [210, 90]],
+    [[110, 110], [190, 190], [110, 190], [190, 110]],
+    [[210,110], [290, 190], [210, 190], [290, 110]],
+    [[110, 210], [190, 290], [110, 290], [190, 210]]
+]
+
+centros_dos_O = [
+    [150, 50],
+    [50, 150],
+    [50, 250],
+    [250, 250]
+]
+
+for [a, b, c, d] in coordenadas_dos_x:
+    cv2.line(img_array, a, b, black,
+             thickness=1, lineType=cv2.LINE_4, shift=0)
+    cv2.line(img_array, c, d, black,
+             thickness=1, lineType=cv2.LINE_4, shift=0)
+
+for centro in centros_dos_O:
+    cv2.circle(img_array, centro, 40, black, thickness=1)
 
 cv2.imshow('Jogo da velha', img_array)
 cv2.waitKey(0)
