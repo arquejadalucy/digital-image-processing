@@ -29,15 +29,15 @@ import cv2
 import numpy as np
 
 # lê uma imagem
-img = cv2.imread('img/imagem18.png')
-
-# define uma matriz de cor zero (preto) de mesmo tamanho da imagem original
-mascara = np.zeros(img.shape[:2], dtype = "uint8")
-diferenca = np.zeros(img.shape[:2], dtype = "uint8")
-complemento = np.zeros(img.shape[:2], dtype = "uint8")
-
+img = cv2.imread('img2/parede1.jpeg')
 # converte em nível de cinza
 cinza = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# define uma matriz de cor zero (preto) de mesmo tamanho da imagem original
+mascara = np.zeros(cinza.shape[:2], dtype = "uint8")
+diferenca = np.zeros(cinza.shape[:2], dtype = "uint8")
+complemento = np.zeros(cinza.shape[:2], dtype = "uint8")
+
+
 
 # converto em cada canal
 b = img[:,:,0]
@@ -45,6 +45,7 @@ g = img[:,:,1]
 r = img[:,:,2]
 
 diferenca = b - r
+complemento = 255 - (g + 110)
 
 v = []
 for i in range(15,60,1):
@@ -64,7 +65,6 @@ for x in range(1, diferenca.shape[0]-1,1):
                 (diferenca[x+1,y+1] in v)):
                 mascara[x,y] = 255
 
-complemento = 255 - (g + 110)
 
 v = []
 for i in range(10,80,1):
@@ -99,6 +99,3 @@ cv2.imwrite("img_com_mascara.jpg", img_com_mascara)
 # mostra a imagem após aplicar a máscar
 cv2.imshow("Máscara aplicada à imagem", img_com_mascara)
 cv2.waitKey(0)
-
-
-
