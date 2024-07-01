@@ -1,0 +1,10 @@
+Mural1.py:
+
+O código realizar a segmentação de uma imagem com base nas informações de cores em um espaço de cores HSV. 
+A segmentação é realizada com base nas cores da pele e das roupas na imagem.
+A imagem é convertida do espaço de cores BGR (padrão no OpenCV) para o espaço de cores HSV
+Uma filtragem bilateral é aplicada à imagem HSV
+São definidas faixas de valores HSV que correspondem aos tons de pele e às roupas.
+Duas máscaras são criadas usando as faixas de valores definidas.
+Uma máscara é criada para identificar os tons de pele (mask)
+e outra para identificar as roupas (mask2) na imagem.

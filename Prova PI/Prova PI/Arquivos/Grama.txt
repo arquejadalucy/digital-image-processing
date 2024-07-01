@@ -1,0 +1,20 @@
+Uma suavização da imagem é aplicada usando um filtro gaussiano
+
+São criadas duas máscaras iniciais, `mascara` e `diferenca`,
+a primeira será usada para destacar regiões de interesse na imagem,
+e a segunda será usada para calcular diferenças entre os canais de cor.
+
+Um loop varre a imagem para identificar pixels que correspondam aos valores dentro do intervalo definido.
+Se um pixel estiver dentro desse intervalo e tiver vizinhos próximos
+também dentro do intervalo, ele é marcado como parte da região de interesse
+e é definido como 255 na máscara
+
+A imagem é convertida para o espaço de cores HSV 
+
+Uma faixa de tons de pele é definida no espaço HSV
+
+A parte da imagem que corresponde à pele é extraída usando a máscara de pele
+
+A parte da imagem que corresponde às roupas é extraída usando a Máscara
+
+As regiões de pele e roupas são mescladas usando a operação bitwise OR.

@@ -1,0 +1,15 @@
+Paredes.py
+
+São definidas três faixas de cores diferentes:
+   - `lower_orange` e `upper_orange`: Faixa de cor laranja.
+   - `lower_brick` e `upper_brick`: Faixa de cor da parede.
+   - `lower_skin` e `upper_skin`: Faixa de cor da pele.
+
+A imagem redimensionada é convertida do espaço de cores BGR para o espaço de cores HSV 
+
+Três máscaras são criadas usando as faixas de valores definidas (`mask_orange`, `mask_brick` e `mask_skin`). 
+
+Para melhorar as máscaras e eliminar pequenos ruídos,são aplicadas operações de erosão e dilatação
+
+As máscaras resultantes (`mask_orange`, `mask_brick` e `mask_skin`)
+são usadas para extrair as partes correspondentes da imagem original.

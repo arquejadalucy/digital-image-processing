@@ -1,0 +1,20 @@
+Realizamos a segmentação da imagem com base em faixas de cores específicas para identificar diferentes 
+partes da imagem.
+
+São definidas três faixas de cores diferentes:
+lower_orange e upper_orange: Faixa de cor laranja.
+lower_brick e upper_brick: Faixa de cor da escada.
+lower_skin e upper_skin: Faixa de cor da pele.
+
+A imagem é convertida do espaço de cores BGR para o espaço de cores HSV
+
+São criadas três máscaras diferentes (mask_orange, mask_brick e mask_skin) usando as faixas de cores definidas.
+Cada máscara destaca uma parte específica da imagem com base nas cores correspondentes.
+
+Para melhorar as máscaras e eliminar pequenos ruídos, são aplicadas operações de erosão e dilatação a 
+cada uma das máscaras.
+
+As máscaras resultantes (mask_orange, mask_brick e mask_skin) são usadas para extrair as 
+partes correspondentes da imagem original
+
+Uma máscara final é criada entre as máscaras das partes da imagem.

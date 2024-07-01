@@ -1,0 +1,19 @@
+Realiza a segmentação da imagem com base em faixas de cores específicas
+
+A imagem redimensionada é convertida do espaço de cores BGR para o espaço de cores HSV 
+
+O espaço de cores HSV é utilizado devido à sua capacidade de separar as informações de matiz (cor), saturação (intensidade da cor) e valor (brilho).
+
+A imagem HSV é suavizada usando um filtro bilateral
+
+São definidas duas faixas de cores diferentes:
+- `low_skin` e `high_skin`: Faixa de valores para destacar a pele.
+- `low_clothing` e `high_clothing`: Faixa de valores para destacar as roupas.
+
+
+Duas máscaras são criadas utilizando as faixas de valores definidas: `mask` para identificar a pele e `mask2` para identificar as roupas. 
+
+As máscaras criadas (`mask` e `mask2`) são usadas para extrair as partes correspondentes da imagem original. 
+
+A fusão das máscaras é realizada através da operação XOR bitwise entre as máscaras da pele (`mask_skin_image`) e das roupas (`mask_clothing_image`).
+

@@ -3,7 +3,7 @@ import numpy as np
 
 
 # lê uma imagem
-#img = cv2.imread('img4.jpg') #Mural
+#img = cv2.imread('mural.jpg') #Mural
 img = cv2.imread('img2/grama2.jpeg') #Grama
 
 gaus = cv2.GaussianBlur(img, (9,9), 9)
